@@ -30,7 +30,7 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
         >
           {!noInitial ? initial : ""}
         </Avatar>
-        <Box flex={1}sx={{ minHeight:"4rem", maxWidth:"10rem",overflowY:"hidden"}}>
+        <Box flex={1}sx={{ minHeight:"3rem", maxWidth:"10rem",overflowY:"hidden"}}>
           <Typography
             margin={0}
             // variant="body2"
