@@ -6,8 +6,8 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { Box, Typography, Divider, Button } from "@mui/material";
 
 const TextInput = ({
-  Inital = "A", // Default initial character
-  label = "Input", // Default aria-label for input
+  Inital = "A",
+  label = "Input",
   value = "",
   onChange,
   noInitial = false,
@@ -15,13 +15,11 @@ const TextInput = ({
   const [isFocused, setIsFocused] = React.useState(false);
   const [isHovered, setIsHovered] = React.useState(false);
 
-  // Event Handlers
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
-  // Styles for Divider
   const dividerStyles = {
     height: 62,
     m: 1,
@@ -38,7 +36,6 @@ const TextInput = ({
         flexDirection: "column",
       }}
     >
-      {/* Input Field */}
       <OutlinedInput
         multiline
         maxRows={2}
@@ -52,7 +49,10 @@ const TextInput = ({
         id="outlined-adornment"
         startAdornment={
           !noInitial && (
-            <InputAdornment position="start" sx={{ display: "flex", alignItems: "center" }}>
+            <InputAdornment
+              position="start"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
               <Typography variant="h6" mx={2} sx={{ color: "black" }}>
                 {Inital}
               </Typography>
@@ -84,8 +84,6 @@ const TextInput = ({
           },
         }}
       />
-
-      {/* Optional Button */}
       {!noInitial && (
         <Button
           variant="outlined"

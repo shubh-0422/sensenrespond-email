@@ -27,14 +27,11 @@ const dummyData = [
 
 const EmailPreview = () => {
   const { subjectA, subjectB, previewText } = useSelector((state) => state.email);
-
-  // Reusable styles
   const headerIconStyles = { fontSize: "large" };
   const wrapperStyles = { display: "flex", justifyContent: "space-between", px: 2, mb: 2 };
 
   return (
     <Box marginLeft={10} flex={1} marginTop={2}>
-      {/* Background Image */}
       <img
         src={ImageIphone}
         alt="Custom Icon"
@@ -49,9 +46,7 @@ const EmailPreview = () => {
           right: "0",
         }}
       />
-
       <Box sx={{ paddingTop: 4 }}>
-        {/* Header Section */}
         <Box sx={wrapperStyles}>
           <KeyboardBackspaceIcon sx={headerIconStyles} />
           <Typography variant="h6" fontWeight={700}>
@@ -59,8 +54,6 @@ const EmailPreview = () => {
           </Typography>
           <MoreVertIcon sx={headerIconStyles} />
         </Box>
-
-        {/* Featured Emails */}
         <EmailCard
           initial="A"
           title="The Green Yoga"
@@ -76,8 +69,6 @@ const EmailPreview = () => {
           previewText={previewText}
           time="05:45 PM"
         />
-
-        {/* Render Dummy Data */}
         <Box sx={{ zIndex: 100 }}>
           {dummyData.map((item) => (
             <EmailCard

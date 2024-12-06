@@ -12,14 +12,13 @@ import EmailPreview from "./components/EmailPreview"; // Replace with your actua
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-// Create a custom theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: purple[500], // Set purple as the primary color
+      main: purple[500],
     },
     secondary: {
-      main: purple[300], // Optional: Customize secondary color
+      main: purple[300],
     },
   },
   typography: {
@@ -27,12 +26,10 @@ const theme = createTheme({
   },
 });
 
-// Dialog Component
 const EmailDialog = () => {
   return (
     <Dialog open={true} maxWidth="md" fullWidth sx={{ borderRadius: 3 }}>
       <Box sx={{ padding: 2 }} flex={1}>
-        {/* Dialog Header */}
         <Box
           sx={{
             display: "flex",
@@ -54,8 +51,6 @@ const EmailDialog = () => {
           </Typography>
           <CloseIcon fontSize="large" />
         </Box>
-
-        {/* Dialog Body */}
         <Box paddingLeft={7}>
           <Typography variant="h6" gutterBottom>
             Add a subject line for this campaign
@@ -75,8 +70,6 @@ const EmailDialog = () => {
             <EmailPreview />
           </Box>
         </Box>
-
-        {/* Dialog Actions */}
         <DialogActions>
           <Button
             disabled={false}
@@ -103,11 +96,10 @@ const EmailDialog = () => {
   );
 };
 
-// Main App Component
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Ensures consistent styling */}
+      <CssBaseline />
       <EmailDialog />
     </ThemeProvider>
   );
