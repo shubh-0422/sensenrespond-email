@@ -27,7 +27,7 @@ This is assignment from sense and respond for the front end developer position.
 
 ### Steps for local setup
 
-- git clone  https://github.com/sumancrest0001/senseAndRespond](https://github.com/shubh-0422/sensenrespond-email
+- git clone  [clone file](https://github.com/shubh-0422/sensenrespond-email)
 - cd sensenrespond-email
 - Install npm packages with "npm install" command
 - Run "npm start"
