@@ -28,25 +28,36 @@ const dummyData = [
 const EmailPreview = () => {
   const { subjectA, subjectB, previewText } = useSelector((state) => state.email);
   const headerIconStyles = { fontSize: "large" };
-  const wrapperStyles = { display: "flex", justifyContent: "space-between", px: 2, mb: 2 };
+  const wrapperStyles = { display: "flex", justifyContent: "space-between", px: 2, mb: 1 };
 
   return (
-    <Box marginLeft={10} flex={1} marginTop={2}>
+    <Box flex={1} sx={{ position: "relative" }}>
+      {/* Image overlapping on email details */}
       <img
         src={ImageIphone}
         alt="Custom Icon"
         style={{
-          maxWidth: "280%",
-          minWidth: "30rem",
-          height: "auto",
-          margin: "10px 0",
-          objectFit: "contain",
-          position: "absolute",
-          top: "90px",
-          right: "0",
+          minWidth: "29rem", // Ensure image is confined within its parent
+          height: "auto",    // Maintain aspect ratio
+          // margin: "10px 0",  // Adjust margins as needed
+          objectFit: "contain",  // Ensure image fits within its parent container
+          position: "absolute", // Align it relative to its parent container
+          top: "0", // Adjust if needed to align vertically within the parent
+          right: "0", // Adjust if needed to align horizontally within the parent
+          zIndex: 1, // Ensure image is behind the text content
         }}
       />
-      <Box sx={{ paddingTop: 4 }}>
+      <Box
+        id="email-details"
+        sx={{
+          px: 4,
+          mx: 2,
+          paddingTop: 4,
+          position: "relative", // Keep email details in flow
+          zIndex: 2, // Ensure the email details are above the image
+          top: "3rem", // Adjust the spacing between image and content
+        }}
+      >
         <Box sx={wrapperStyles}>
           <KeyboardBackspaceIcon sx={headerIconStyles} />
           <Typography variant="h6" fontWeight={700}>
@@ -83,9 +94,7 @@ const EmailPreview = () => {
             />
           ))}
         </Box>
-
-        {/* Footer Note */}
-        <Box sx={{ paddingTop: 5, paddingBottom: 2 }}>
+        <Box sx={{ paddingY: 5 }}>
           <Typography variant="body2" color="gray">
             Actual email preview may vary depending on the email client.
           </Typography>

@@ -9,8 +9,7 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
     <Box
       sx={{
         borderRadius: 2,
-        px: 2,
-        mx: 2,
+    
         opacity: isEnabled ? 1 : 0.6,
         pointerEvents: isEnabled ? "auto" : "none",
       }}
@@ -32,7 +31,7 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
         >
           {!noInitial ? initial : ""}
         </Avatar>
-        <Box flex={1}>
+        <Box flex={1} minHeight={"5rem"}>
           <Typography
             margin={0}
             variant="body1"

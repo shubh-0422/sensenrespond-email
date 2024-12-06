@@ -32,6 +32,7 @@ const TextInput = ({
     <Box
       sx={{
         display: "flex",
+        flex:1,
         alignItems: "flex-start",
         flexDirection: "column",
       }}
