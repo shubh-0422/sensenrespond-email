@@ -26,3 +26,7 @@ Make sure you have **Node.js** installed on your machine. You can download it fr
    ```bash
    git clone https://github.com/shubh-0422/sensenrespond-email
    cd sensenrespond-email
+
+
+2. ** live demo https://snr-email-preview.netlify.app/
+
