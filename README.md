@@ -36,11 +36,5 @@ This is assignment from sense and respond for the front end developer position.
 ### [Live demo](https://snr-email-preview.netlify.app/)
 ### Contributor
 
-- [Shubham Kumawat]([https://github.com/sumancrest0001/](https://github.com/shubh-0422))
-   ```bash
-   git clone https://github.com/shubh-0422/sensenrespond-email
-   cd sensenrespond-email
-
-
-2. ** live demo** 
-
+- [Shubham Kumawat](https://github.com/shubh-0422)
+  
