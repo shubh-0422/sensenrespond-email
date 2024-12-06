@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { green } from "@mui/material/colors";
+import { green, purple } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 import DialogActions from "@mui/material/DialogActions";
 import { Typography } from "@mui/material";
@@ -9,12 +9,30 @@ import Dialog from "@mui/material/Dialog";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import EmailInput from "./components/EmailInput"; // Replace with your actual component
 import EmailPreview from "./components/EmailPreview"; // Replace with your actual component
-import ImageIphone from "./assets/a-removebg-preview.png"; // Path to image
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
-const EmailLayout = () => {
+// Create a custom theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500], // Set purple as the primary color
+    },
+    secondary: {
+      main: purple[300], // Optional: Customize secondary color
+    },
+  },
+  typography: {
+    fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
+  },
+});
+
+// Dialog Component
+const EmailDialog = () => {
   return (
-    <Dialog open={true} maxWidth="md" fullWidth  sx={{borderRadius:3}}>
+    <Dialog open={true} maxWidth="md" fullWidth sx={{ borderRadius: 3 }}>
       <Box sx={{ padding: 2 }} flex={1}>
+        {/* Dialog Header */}
         <Box
           sx={{
             display: "flex",
@@ -36,26 +54,29 @@ const EmailLayout = () => {
           </Typography>
           <CloseIcon fontSize="large" />
         </Box>
-        <Box paddingLeft={7} >
+
+        {/* Dialog Body */}
+        <Box paddingLeft={7}>
           <Typography variant="h6" gutterBottom>
             Add a subject line for this campaign
           </Typography>
           <Box
-            noValidate
             component="form"
+            noValidate
             sx={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-start",
-               // Ensure proper spacing
-               paddingTop:4, 
+              paddingTop: 4,
               flexWrap: "wrap", // Allow items to wrap if needed
             }}
           >
-            <EmailInput /> 
-           <EmailPreview />
+            <EmailInput />
+            <EmailPreview />
           </Box>
         </Box>
+
+        {/* Dialog Actions */}
         <DialogActions>
           <Button
             disabled={false}
@@ -82,4 +103,14 @@ const EmailLayout = () => {
   );
 };
 
-export default EmailLayout;
+// Main App Component
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline /> {/* Ensures consistent styling */}
+      <EmailDialog />
+    </ThemeProvider>
+  );
+};
+
+export default App;
