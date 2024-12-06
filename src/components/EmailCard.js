@@ -9,7 +9,6 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
     <Box
       sx={{
         borderRadius: 2,
-    
         opacity: isEnabled ? 1 : 0.6,
         pointerEvents: isEnabled ? "auto" : "none",
       }}

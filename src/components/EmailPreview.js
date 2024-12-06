@@ -50,12 +50,13 @@ const EmailPreview = () => {
       <Box
         id="email-details"
         sx={{
-          px: 4,
-          mx: 2,
+          px: 0,
+          mx: 0,
           paddingTop: 4,
           position: "relative", // Keep email details in flow
           zIndex: 2, // Ensure the email details are above the image
-          top: "3rem", // Adjust the spacing between image and content
+          top: "3rem",left:"5rem", 
+          maxWidth:"22rem"// Adjust the spacing between image and content
         }}
       >
         <Box sx={wrapperStyles}>
