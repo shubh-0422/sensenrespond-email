@@ -13,20 +13,34 @@ This project is a **Real-Time Email Preview Application** built as part of the *
 - **State Management**: Redux handles the application state efficiently across different components.
 - **Authentication System**: The app uses `localStorage` for authentication (with basic login and signup functionality).
 
-## Setup Instructions
+### sense and respond assignment
 
-### Prerequisites
+This is assignment from sense and respond for the front end developer position.
 
-Make sure you have **Node.js** installed on your machine. You can download it from [here](https://nodejs.org/).
+### Features of the project.
 
-### Local Setup
+- authentication system using localStorage
+- implement react-redux
+- nested comment system.
+- pagination for the parent comments
 
-1. **Clone the Repository**
 
+### Steps for local setup
+
+- git clone  https://github.com/sumancrest0001/senseAndRespond](https://github.com/shubh-0422/sensenrespond-email
+- cd sensenrespond-email
+- Install npm packages with "npm install" command
+- Run "npm start"
+- Open [http://localhost:3000]
+
+### [Live demo](https://snr-email-preview.netlify.app/)
+### Contributor
+
+- [Shubham Kumawat]([https://github.com/sumancrest0001/](https://github.com/shubh-0422))
    ```bash
    git clone https://github.com/shubh-0422/sensenrespond-email
    cd sensenrespond-email
 
 
-2. ** live demo https://snr-email-preview.netlify.app/
+2. ** live demo** 
 
