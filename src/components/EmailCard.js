@@ -22,21 +22,21 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
           mb: 2,
         }}
       >
-        <Avatar
-          sx={{
+        <Avatar 
+          sx={{width: 32, height: 32 ,
             bgcolor: isblue ? blue[500] : "primary.main",
           }}
           aria-label="recipe"
         >
           {!noInitial ? initial : ""}
         </Avatar>
-        <Box flex={1} minHeight={"5rem"}>
+        <Box flex={1}sx={{ minHeight:"4rem", maxWidth:"10rem",overflowY:"hidden"}}>
           <Typography
             margin={0}
-            variant="body1"
+            // variant="body2"
             sx={{
               fontWeight: 800,
-              fontSize: "1.2rem",
+              fontSize: "0.9rem",
               color: isEnabled ? "text.primary" : "text.disabled",
             }}
           >
@@ -48,27 +48,25 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
             sx={{
               fontWeight: 700,
               color: isEnabled ? "text.primary" : grey[600],
-              fontSize: "1rem",
-            }}
-          >
-            {subTitle}
+              fontSize: "0.7rem", maxWidth:"10rem",overflowX:"hidden"}}>
+         
+            {subTitle.slice(0,30)}
           </Typography>
           <Typography
             variant="body2"
             sx={{
               fontWeight: 600,
               color: isEnabled ? "text.primary" : grey[600],
-              fontSize: "0.8rem",
-            }}
-          >
-            {previewText}
+              fontSize: "0.6rem",maxWidth:"10rem",overflowX:"hidden"}}>
+         
+            {previewText.slice(0,22)}
           </Typography>
         </Box>
         <Typography
           variant="body1"
           sx={{
             fontWeight: 800,
-            fontSize: "1.2rem",
+            fontSize: "0.9rem",
             color: isEnabled ? "text.primary" : "text.disabled",
           }}
         >

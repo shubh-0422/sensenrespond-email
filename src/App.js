@@ -48,20 +48,20 @@ const EmailDialog = () => {
           }}
         >
           <Typography
-            variant={isMobile ? "h6" : "h5"}
+            variant={isMobile ? "subtitle1" : "h6"}
             gutterBottom
             sx={{ display: "flex", alignItems: "center" }}
           >
             <CheckCircleRoundedIcon
               sx={{ color: green[500], marginRight: 2 }}
-              fontSize={isMobile ? "medium" : "large"}
+              fontSize={ "medium"}
             />
             Subject
           </Typography>
           <CloseIcon fontSize={isMobile ? "medium" : "large"} />
         </Box>
-        <Box paddingLeft={isMobile ? 2 : 7} paddingRight={isMobile ? 2 : 0}>
-          <Typography variant="h6" gutterBottom fontSize={isMobile ? "1rem" : "1.25rem"}>
+        <Box paddingLeft={isMobile ? 2 : 6} paddingRight={isMobile ? 2 : 0}>
+          <Typography variant="subtitle2" gutterBottom fontSize={isMobile ? "1rem" : "1.25rem"}>
             Add a subject line for this campaign
           </Typography>
           <Box
@@ -71,13 +71,15 @@ const EmailDialog = () => {
               display: "flex",
               flexDirection: isMobile ? "column" : "row",
               justifyContent: "flex-start",
-              paddingTop: 4,
+              paddingTop: 2,
               flexWrap: isMobile ? "nowrap" : "wrap",
               gap: isMobile ? 8 : 0,
             }}
           >
             <EmailInput />
+            <Box sx={{marginLeft:isMobile ? 4 : 4,}}>
             <EmailPreview />
+            </Box>
           </Box>
         </Box>
         <DialogActions

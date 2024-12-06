@@ -41,6 +41,7 @@ const TextInput = ({
         multiline
         maxRows={2}
         fullWidth
+        size="small"
         value={value}
         onChange={onChange}
         onFocus={handleFocus}
@@ -54,7 +55,7 @@ const TextInput = ({
               position="start"
               sx={{ display: "flex", alignItems: "center" }}
             >
-              <Typography variant="h6" mx={2} sx={{ color: "black" }}>
+              <Typography variant="subtitle1" mx={2} sx={{ color: "black" }}>
                 {Inital}
               </Typography>
               <Divider orientation="vertical" sx={dividerStyles} />
@@ -63,7 +64,7 @@ const TextInput = ({
         }
         endAdornment={
           <InputAdornment position="end">
-            <IconButton edge="end" size="large">
+            <IconButton edge="end" size="medium">
               <PermIdentityIcon sx={{ color: "primary.main" }} />
             </IconButton>
           </InputAdornment>
@@ -88,7 +89,7 @@ const TextInput = ({
       {!noInitial && (
         <Button
           variant="outlined"
-          size="large"
+          size="medium"
           sx={{
             alignSelf: "flex-end",
             borderRadius: 4,
@@ -102,7 +103,7 @@ const TextInput = ({
             },
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
             Use AI
           </Typography>
         </Button>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography ,useMediaQuery} from "@mui/material";
+import { useTheme } from "@mui/system";
 import { useSelector } from "react-redux";
 import ImageIphone from "./../assets/a-removebg-preview.png";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -28,7 +29,10 @@ const dummyData = [
 const EmailPreview = () => {
   const { subjectA, subjectB, previewText } = useSelector((state) => state.email);
   const headerIconStyles = { fontSize: "large" };
-  const wrapperStyles = { display: "flex", justifyContent: "space-between", px: 2, mb: 1 };
+  const wrapperStyles = { display: "flex", justifyContent: "space-between"};
+  
+  const muiTheme = useTheme();
+  const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
   return (
     <Box flex={1} sx={{ position: "relative" }}>
@@ -37,14 +41,12 @@ const EmailPreview = () => {
         src={ImageIphone}
         alt="Custom Icon"
         style={{
-          minWidth: "29rem", // Ensure image is confined within its parent
+          minWidth: "24rem", // Ensure image is confined within its parent
           height: "auto",    // Maintain aspect ratio
           // margin: "10px 0",  // Adjust margins as needed
           objectFit: "contain",  // Ensure image fits within its parent container
           position: "absolute", // Align it relative to its parent container
-          top: "0", // Adjust if needed to align vertically within the parent
-          right: "0", // Adjust if needed to align horizontally within the parent
-          zIndex: 1, // Ensure image is behind the text content
+          top: "-2rem",left: isMobile?"-2rem":"3rem", zIndex: 1, // Ensure image is behind the text content
         }}
       />
       <Box
@@ -52,16 +54,16 @@ const EmailPreview = () => {
         sx={{
           px: 0,
           mx: 0,
-          paddingTop: 4,
+          paddingTop: 1,
           position: "relative", // Keep email details in flow
           zIndex: 2, // Ensure the email details are above the image
-          top: "3rem",left:"5rem", 
-          maxWidth:"22rem"// Adjust the spacing between image and content
+          top:  isMobile?"2rem":"1rem",left: isMobile?"1rem":"6rem", 
+          maxWidth:"18rem"// Adjust the spacing between image and content
         }}
       >
-        <Box sx={wrapperStyles}>
+        <Box sx={{...wrapperStyles,alignItems:"baseline" }}>
           <KeyboardBackspaceIcon sx={headerIconStyles} />
-          <Typography variant="h6" fontWeight={700}>
+          <Typography variant="subtitle1" fontWeight={700}>
             Index
           </Typography>
           <MoreVertIcon sx={headerIconStyles} />
@@ -95,8 +97,8 @@ const EmailPreview = () => {
             />
           ))}
         </Box>
-        <Box sx={{ paddingY: 5 }}>
-          <Typography variant="body2" color="gray">
+        <Box sx={{ padding: 0,margin:0}}>
+          <Typography sx={{fontSize:"0.7rem"}} color="gray">
             Actual email preview may vary depending on the email client.
           </Typography>
         </Box>

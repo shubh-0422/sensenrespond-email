@@ -7,6 +7,7 @@ import {
   updatePreviewText,
 } from "./../redux/emailSlice";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { red } from "@mui/material/colors";
 import TextInput from "./TextInput";
 
 const EmailInput = () => {
@@ -18,13 +19,21 @@ const EmailInput = () => {
   const renderInputSection = (title, icon, inputs) => (
     <Box mb={3}>
       <Typography
-        variant="h6"
+        variant="subtitle1"
         gutterBottom
         sx={{ display: "flex", alignItems: "center", fontWeight: 700 }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
           {title}
-          {icon && <HelpOutlineIcon sx={{ marginLeft: 1 }} color="primary" />}
+          {title==="Subject Line"&&<span style={{marginLeft:"0.3rem",color:red[700]}}>*</span>}
+          {icon && (
+            <HelpOutlineIcon
+              sx={{ marginLeft: 0.5 }}
+              color="primary"
+              fontSize="
+          medium"
+            />
+          )}
         </Box>
       </Typography>
       {inputs}
