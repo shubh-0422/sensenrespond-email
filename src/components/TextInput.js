@@ -92,7 +92,7 @@ const TextInput = ({
           size="medium"
           sx={{
             alignSelf: "flex-end",
-            borderRadius: 4,
+            borderRadius: 3,
             marginBottom: 2,
             color: "black",
             borderColor: "#e0e0e0",

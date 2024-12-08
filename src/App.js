@@ -50,7 +50,7 @@ const EmailDialog = () => {
           <Typography
             variant={isMobile ? "subtitle1" : "h6"}
             gutterBottom
-            sx={{ display: "flex", alignItems: "center" }}
+            sx={{ display: "flex", alignItems: "center",fontWeight:600 }}
           >
             <CheckCircleRoundedIcon
               sx={{ color: green[500], marginRight: 2 }}

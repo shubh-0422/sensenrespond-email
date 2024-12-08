@@ -46,7 +46,7 @@ const EmailPreview = () => {
           // margin: "10px 0",  // Adjust margins as needed
           objectFit: "contain",  // Ensure image fits within its parent container
           position: "absolute", // Align it relative to its parent container
-          top: "-2rem",left: isMobile?"-2rem":"3rem", zIndex: 1, // Ensure image is behind the text content
+          top: "-2.5rem",left: isMobile?"-2rem":"3rem", zIndex: 1, // Ensure image is behind the text content
         }}
       />
       <Box
@@ -54,7 +54,7 @@ const EmailPreview = () => {
         sx={{
           px: 0,
           mx: 0,
-          paddingTop: 1,
+          paddingY: 2,
           position: "relative", // Keep email details in flow
           zIndex: 2, // Ensure the email details are above the image
           top:  isMobile?"2rem":"1rem",left: isMobile?"1rem":"6rem", 
@@ -83,7 +83,6 @@ const EmailPreview = () => {
           previewText={previewText}
           time="05:45 PM"
         />
-        <Box sx={{ zIndex: 100 }}>
           {dummyData.map((item) => (
             <EmailCard
               key={item.id}
@@ -96,7 +95,6 @@ const EmailPreview = () => {
               time={item.time}
             />
           ))}
-        </Box>
         <Box sx={{ padding: 0,margin:0}}>
           <Typography sx={{fontSize:"0.7rem"}} color="gray">
             Actual email preview may vary depending on the email client.
