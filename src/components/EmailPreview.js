@@ -36,17 +36,15 @@ const EmailPreview = () => {
 
   return (
     <Box flex={1} sx={{ position: "relative" }}>
-      {/* Image overlapping on email details */}
       <img
         src={ImageIphone}
         alt="Custom Icon"
         style={{
-          minWidth: "24rem", // Ensure image is confined within its parent
-          height: "auto",    // Maintain aspect ratio
-          // margin: "10px 0",  // Adjust margins as needed
-          objectFit: "contain",  // Ensure image fits within its parent container
-          position: "absolute", // Align it relative to its parent container
-          top: "-2.5rem",left: isMobile?"-2rem":"3rem", zIndex: 1, // Ensure image is behind the text content
+          minWidth: "24rem", 
+          height: "auto",  
+          objectFit: "contain",
+          position: "absolute", 
+          top: "-2.5rem",left: isMobile?"-2rem":"3rem", zIndex: 1, 
         }}
       />
       <Box
@@ -55,10 +53,10 @@ const EmailPreview = () => {
           px: 0,
           mx: 0,
           paddingY: 2,
-          position: "relative", // Keep email details in flow
-          zIndex: 2, // Ensure the email details are above the image
+          position: "relative", 
+          zIndex: 2, 
           top:  isMobile?"2rem":"1rem",left: isMobile?"1rem":"6rem", 
-          maxWidth:"18rem"// Adjust the spacing between image and content
+          maxWidth:"18rem"
         }}
       >
         <Box sx={{...wrapperStyles,alignItems:"baseline" }}>

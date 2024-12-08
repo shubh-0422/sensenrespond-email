@@ -33,7 +33,6 @@ const EmailCard = ({ noInitial, initial, title, subTitle, previewText, time, isb
         <Box flex={1}sx={{ minHeight:"3rem", maxWidth:"10rem",overflowY:"hidden"}}>
           <Typography
             margin={0}
-            // variant="body2"
             sx={{
               fontWeight: 800,
               fontSize: "0.9rem",
