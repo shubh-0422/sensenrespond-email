@@ -14,7 +14,7 @@ const dummyData = [
     title: "Brevo Academy",
     subTitle: "Free email marketing course",
     previewText: "Learn how to create an email marketing strategy.",
-    time: "Sep 6",
+    time: "01:00 PM",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const dummyData = [
     title: "Brevo Editor",
     subTitle: "Try the new drag & drop editor",
     previewText: "Learn how to save time & build beautiful emails in a flash.",
-    time: "Sep 5",
+    time: "04:00 PM",
   },
 ];
 
