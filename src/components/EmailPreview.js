@@ -7,7 +7,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EmailCard from "./EmailCard";
 
-const dummyData = [
+const emails = [
   {
     id: 1,
     initial: "B",
@@ -29,7 +29,7 @@ const dummyData = [
 const EmailPreview = () => {
   const { subjectA, subjectB, previewText } = useSelector((state) => state.email);
   const headerIconStyles = { fontSize: "large" };
-  const wrapperStyles = { display: "flex", justifyContent: "space-between"};
+  const wrapperStyles = { display: "flex", justifyContent: "space-between", marginBottom: '0.5rem '};
   
   const muiTheme = useTheme();
   const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
@@ -40,26 +40,21 @@ const EmailPreview = () => {
         src={ImageIphone}
         alt="Custom Icon"
         style={{
-          minWidth: "24rem", 
-          height: "auto",  
-          objectFit: "contain",
-          position: "absolute", 
-          top: "-2.5rem",left: isMobile?"-2rem":"3rem", zIndex: 1, 
+          width: '100%',
+          height: "auto",
         }}
       />
       <Box
         id="email-details"
         sx={{
-          px: 0,
-          mx: 0,
-          paddingY: 2,
-          position: "relative", 
+          position: "absolute", 
           zIndex: 2, 
-          top:  isMobile?"2rem":"1rem",left: isMobile?"1rem":"6rem", 
-          maxWidth:"18rem"
+          top: '5rem',
+          left: '3.5rem',
+          width: '75%'
         }}
       >
-        <Box sx={{...wrapperStyles,alignItems:"baseline" }}>
+        <Box sx={{...wrapperStyles, alignItems:"baseline" }}>
           <KeyboardBackspaceIcon sx={headerIconStyles} />
           <Typography variant="subtitle1" fontWeight={700}>
             Index
@@ -81,7 +76,7 @@ const EmailPreview = () => {
           previewText={previewText}
           time="05:45 PM"
         />
-          {dummyData.map((item) => (
+          {emails.map((item) => (
             <EmailCard
               key={item.id}
               isblue={item.id % 2 === 0}
@@ -93,12 +88,10 @@ const EmailPreview = () => {
               time={item.time}
             />
           ))}
-        <Box sx={{ padding: 0,margin:0}}>
-          <Typography sx={{fontSize:"0.7rem"}} color="gray">
+      </Box>
+      <Typography sx={{fontSize:"0.7rem"}} color="gray" textAlign={'center'}>
             Actual email preview may vary depending on the email client.
           </Typography>
-        </Box>
-      </Box>
     </Box>
   );
 };

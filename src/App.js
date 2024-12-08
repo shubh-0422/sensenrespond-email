@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Button, DialogActions, Typography, Dialog, useMediaQuery, CssBaseline } from "@mui/material";
+import { Box, Button, DialogActions, Typography, Dialog, useMediaQuery, CssBaseline, Grid2 } from "@mui/material";
 import { green, purple } from "@mui/material/colors";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
@@ -35,10 +35,11 @@ const EmailDialog = () => {
         borderRadius: isMobile ? 0 : 3,
         "& .MuiPaper-root": {
           margin: isMobile ? 0 : undefined,
+          padding: '24px 24px 0px 24px'
         },
       }}
     >
-      <Box sx={{ padding: isMobile ? 1 : 2 }} flex={1}>
+
         <Box
           sx={{
             display: "flex",
@@ -60,28 +61,19 @@ const EmailDialog = () => {
           </Typography>
           <CloseIcon fontSize={isMobile ? "medium" : "large"} />
         </Box>
-        <Box paddingLeft={isMobile ? 2 : 6} paddingRight={isMobile ? 2 : 0}>
+      <Grid2 container spacing={2} alignItems={'center'}>
+        <Grid2 size={{xs: 12, md: 6, lg: 6}} >
           <Typography variant="subtitle2" gutterBottom fontSize={isMobile ? "1rem" : "1.25rem"}>
             Add a subject line for this campaign
           </Typography>
-          <Box
-            component="form"
-            noValidate
-            sx={{
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              justifyContent: "flex-start",
-              paddingTop: 2,
-              flexWrap: isMobile ? "nowrap" : "wrap",
-              gap: isMobile ? 8 : 0,
-            }}
-          >
             <EmailInput />
-            <Box sx={{marginLeft:isMobile ? 4 : 4,}}>
+        </Grid2>
+
+        <Grid2 size={{xs: 12, md: 6, lg: 6}}>
             <EmailPreview />
-            </Box>
-          </Box>
-        </Box>
+        </Grid2>
+      </Grid2>
+      <Box sx={{ padding: isMobile ? 1 : 2 }} flex={1}>
         <DialogActions
           sx={{
             flexDirection: isMobile ? "column" : "row",
